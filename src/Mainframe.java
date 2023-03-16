@@ -25,200 +25,61 @@ public class Mainframe extends JFrame {
     int count=0;
 
     public Mainframe() {
-        setTitle("TicTacToe");
-        setSize(600, 800);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-        setContentPane(Mainframe);
+        constructorCode();
         lockButtons();
 
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button1.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button1.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button1.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button1.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button1);
             }
         });
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button2.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button2.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button2.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button2.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button2);
             }
         });
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button3.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button3.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button3.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button3.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button3);
             }
         });
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button4.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button4.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button4.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button4.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button4);
             }
         });
         button5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button5.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button5.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button5.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button5.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button5);
             }
         });
         button6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button6.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button6.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button6.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button6.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button6);
             }
         });
         button7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button7.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button7.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button7.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button7.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button7);
             }
         });
         button8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button8.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button8.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button8.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button8.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button8);
             }
         });
         button9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player == xSign){
-                    button9.setText(xSign);
-                    player = oSign;
-                    statusLabel.setText(oSign +", your turn.");
-                    button9.setEnabled(false);
-                    play();
-                    count+=1;
-                }
-                else{
-                    button9.setText(oSign);
-                    player = xSign;
-                    statusLabel.setText(xSign + ", your turn.");
-                    button9.setEnabled(false);
-                    play();
-                    count+=1;
-                }
+                buttons(button9);
             }
         });
         reset.addActionListener(new ActionListener() {
@@ -239,6 +100,7 @@ public class Mainframe extends JFrame {
                 count=0;
                 player= xSign;
                 statusLabel.setText(xSign + ", your turn.");
+
 
             }
         });
@@ -341,32 +203,49 @@ public class Mainframe extends JFrame {
            button1.setEnabled(false);
            lockButtons();
        }
-       else if(count==8){
+       else if(count>=8){
            statusLabel.setText("DRAW-> PLEASE RESET");
        }
 
     }
 
     public void lockButtons(){
-        button1.setEnabled(false);
-        button2.setEnabled(false);
-        button3.setEnabled(false);
-        button4.setEnabled(false);
-        button5.setEnabled(false);
-        button6.setEnabled(false);
-        button7.setEnabled(false);
-        button8.setEnabled(false);
-        button9.setEnabled(false);
+        JButton[] buttonSpeicher = new JButton[]{button1, button2, button3, button4, button5, button6, button7, button8, button9};
+        for (int i = 0; i <buttonSpeicher.length ; i++) {
+            buttonSpeicher[i].setEnabled(false);
+        }
     }
     public void unlockButtons(){
-        button1.setEnabled(true);
-        button2.setEnabled(true);
-        button3.setEnabled(true);
-        button4.setEnabled(true);
-        button5.setEnabled(true);
-        button6.setEnabled(true);
-        button7.setEnabled(true);
-        button8.setEnabled(true);
-        button9.setEnabled(true);
+        JButton[] buttonSpeicher = new JButton[]{button1, button2, button3, button4, button5, button6, button7, button8, button9};
+        for (int i = 0; i <buttonSpeicher.length ; i++) {
+            buttonSpeicher[i].setEnabled(true);
+        }
+    }
+
+    public void buttons(JButton buttonname){
+        if(player == xSign){
+            buttonname.setText(xSign);
+            player = oSign;
+            statusLabel.setText(oSign +", your turn.");
+            buttonname.setEnabled(false);
+            play();
+            count+=1;
+        }
+        else{
+            buttonname.setText(oSign);
+            player = xSign;
+            statusLabel.setText(xSign + ", your turn.");
+            buttonname.setEnabled(false);
+            play();
+            count+=1;
+        }
+    }
+    public void constructorCode(){
+        setTitle("TicTacToe");
+        setSize(600, 800);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
+        setContentPane(Mainframe);
+        setLocationRelativeTo(null);
     }
 }
